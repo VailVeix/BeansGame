@@ -111,7 +111,7 @@ func _on_dan_timer_timeout():
 
 	# Add some randomness to the direction.
 	direction += randf_range(-PI / 4, PI / 4)
-	dan.rotation = direction
+	#dan.rotation = direction
 
 	# Choose the velocity for the mob.
 	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
@@ -132,3 +132,4 @@ func _on_daniel_music_finished():
 
 func _on_daniel_done_finished():
 	$Player.set_daniel(0)
+	$Music.play()
