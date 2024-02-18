@@ -6,7 +6,7 @@ signal dan
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 var screen_edge
-var daniel
+@export var daniel = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +24,14 @@ func start(pos):
 	show()
 	$CollisionShape2D.disabled = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func set_daniel(danny):
+	daniel = danny
+	if(daniel):
+		$AnimatedSprite2D.animation = "dan"
+	else:
+		$AnimatedSprite2D.animation = "walk"
+
 func _process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
@@ -54,11 +62,10 @@ func _process(delta):
 			$AnimatedSprite2D.animation = "dan"
 		else:
 			$AnimatedSprite2D.animation = "up"
-		$AnimatedSprite2D.flip_v = velocity.y > 0
+			$AnimatedSprite2D.flip_v = velocity.y > 0
 			
 	position += velocity * delta
 	position = position.clamp(screen_edge, screen_size)
-
 
 func _on_body_entered(body):
 	if(daniel == 0):

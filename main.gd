@@ -123,4 +123,12 @@ func _on_dan_timer_timeout():
 func _on_player_dan():
 	$Music.stop()
 	$DanielSound.play();
+
+func _on_daniel_sound_finished():
 	$DanielMusic.play();
+
+func _on_daniel_music_finished():
+	$DanielDone.play();
+
+func _on_daniel_done_finished():
+	$Player.set_daniel(0)
