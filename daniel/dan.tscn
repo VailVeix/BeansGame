@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c28sjc8fmre0e"]
+
+[ext_resource type="Script" path="res://cats/coin.gd" id="1_pfll6"]
+[ext_resource type="Texture2D" uid="uid://mfkn0yiejx6q" path="res://art/dan.png" id="2_3qxck"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nev1"]
+radius = 26.0
+height = 86.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r0l8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3qxck")
+}],
+"loop": true,
+"name": &"dan",
+"speed": 5.0
+}]
+
+[node name="Dan" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_pfll6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 3)
+shape = SubResource("CapsuleShape2D_2nev1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(26, 0)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_r0l8s")
+animation = &"dan"

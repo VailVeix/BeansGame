@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctkmplc8e2ruv"
+path="res://.godot/imported/Daniel (Remastered)-[AudioTrimmer.com].mp3-a0e501594845f230ab4413a4fb4b08b8.mp3str"
+
+[deps]
+
+source_file="res://art/Daniel (Remastered)-[AudioTrimmer.com].mp3"
+dest_files=["res://.godot/imported/Daniel (Remastered)-[AudioTrimmer.com].mp3-a0e501594845f230ab4413a4fb4b08b8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds67ax1wspo8n"]
+
+[ext_resource type="Script" path="res://cats/coin.gd" id="1_hpcjs"]
+[ext_resource type="Texture2D" uid="uid://bi4l5416n5bhu" path="res://art/rocket.png" id="2_i15ug"]
+[ext_resource type="Texture2D" uid="uid://cw2iscvklhicf" path="res://art/snow2.png" id="3_5v2kq"]
+[ext_resource type="Texture2D" uid="uid://4ap453wxmvtc" path="res://art/sophie.png" id="4_8wuri"]
+[ext_resource type="Texture2D" uid="uid://bljy6pu1rp3wg" path="res://art/squid.png" id="5_57oti"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nev1"]
+radius = 50.0
+height = 158.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r0l8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i15ug")
+}],
+"loop": true,
+"name": &"rocket",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5v2kq")
+}],
+"loop": true,
+"name": &"snow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8wuri")
+}],
+"loop": true,
+"name": &"sohpie",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_57oti")
+}],
+"loop": true,
+"name": &"squid",
+"speed": 3.0
+}]
+
+[node name="Coin" type="RigidBody2D" groups=["coins"]]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_hpcjs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -8)
+rotation = 0.472984
+shape = SubResource("CapsuleShape2D_2nev1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(22, -4)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_r0l8s")
+animation = &"squid"

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddot0vgej35au"]
+
+[ext_resource type="Script" path="res://dogs/mob.gd" id="1_xt1d7"]
+[ext_resource type="Texture2D" uid="uid://8qt63eufq0vo" path="res://art/beans.png" id="2_fp2ti"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xbb3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fp2ti")
+}],
+"loop": true,
+"name": &"beans",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2nev1"]
+radius = 50.0
+height = 154.0
+
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_xt1d7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["coins"]]
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_xbb3r")
+animation = &"beans"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -5)
+shape = SubResource("CapsuleShape2D_2nev1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

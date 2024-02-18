@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfcm60yv4bngj"
+path="res://.godot/imported/Super Mario Bros - Star-[AudioTrimmer.com].mp3-41ec9cb03dfa87420f703d870ca17638.mp3str"
+
+[deps]
+
+source_file="res://art/Super Mario Bros - Star-[AudioTrimmer.com].mp3"
+dest_files=["res://.godot/imported/Super Mario Bros - Star-[AudioTrimmer.com].mp3-41ec9cb03dfa87420f703d870ca17638.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
